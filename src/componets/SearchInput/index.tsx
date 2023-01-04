@@ -1,10 +1,10 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./index.scss";
 
 interface IProps {
@@ -15,13 +15,18 @@ interface IProps {
 }
 
 const SearchInput: FC<IProps> = (props) => {
-  const { onChange, searchValue, handleSearch, clearSearch} = props;
+  const { onChange, searchValue, handleSearch, clearSearch } = props;
   return (
-    <Paper className='search'>
-      <IconButton>
+    <Paper className="search">
+      <IconButton className="search__icon">
         <SearchIcon />
       </IconButton>
-      <InputBase placeholder="Search" onChange={(e)=>onChange(e.target.value)} value={searchValue} onPointerEnter={handleSearch}/>
+      <InputBase
+        placeholder="Search"
+        onChange={(e) => onChange(e.target.value)}
+        value={searchValue}
+        onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+      />
       <IconButton type="button" onClick={clearSearch}>
         <CloseIcon />
       </IconButton>

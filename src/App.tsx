@@ -1,8 +1,9 @@
 import Search from "./pages/Search";
+import './App.scss';
 
 function App() {
   return (
-    <div>
+    <div className="main">
       <Search />
     </div>
   );
