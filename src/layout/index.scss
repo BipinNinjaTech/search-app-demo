@@ -1,0 +1,16 @@
+.header{
+    .app-bar{
+        background-color: transparent;
+        box-shadow: none;
+        color: black;
+        a{
+            margin-right: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        .active{
+            font-weight: bold;
+            color: black;
+        }
+    }
+}

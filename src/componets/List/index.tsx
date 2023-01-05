@@ -25,11 +25,13 @@ const List: FC<IProps> = (props) => {
 
   return (
     <div className="list">
-      <p>{totalResultsCount} {totalResultsCount > 1 ? 'results':'result'} found</p>
+      <p>
+        {totalResultsCount} {totalResultsCount > 1 ? "results" : "result"} found
+      </p>
       <Divider />
-      {currentList.map((res) => {
+      {currentList.map((res, index) => {
         return (
-          <div>
+          <div key={index}>
             <h3>{res.parentTitle}</h3>
             <p>{res.childTitle}</p>
             <p>{res.subChildTitle}</p>
@@ -37,11 +39,14 @@ const List: FC<IProps> = (props) => {
           </div>
         );
       })}
-      <Pagination
-        count={Math.ceil(totalResultsCount / 5)}
-        page={page}
-        onChange={(_e, page) => setPage(page)}
-      />
+      {totalResultsCount > 0 && (
+        <Pagination
+          count={Math.ceil(totalResultsCount / 5)}
+          page={page}
+          onChange={(_e, page) => setPage(page)}
+          className='pagination'
+        />
+      )}
     </div>
   );
 };

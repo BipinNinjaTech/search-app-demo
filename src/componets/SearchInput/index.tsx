@@ -1,10 +1,10 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./index.scss";
 
 interface IProps {
@@ -15,23 +15,28 @@ interface IProps {
 }
 
 const SearchInput: FC<IProps> = (props) => {
+  const navigate = useNavigate();
+
   const { onChange, searchValue, handleSearch, clearSearch } = props;
+
+  const handleSearchAction = () => {
+    handleSearch();
+    navigate("/search");
+  };
+
   return (
     <Paper className="search">
-      <IconButton className="search__icon">
-        <SearchIcon />
-      </IconButton>
       <InputBase
         placeholder="Search"
+        className="search__inputBox"
         onChange={(e) => onChange(e.target.value)}
         value={searchValue}
-        onKeyDown={(e) => e.key === "Enter" && handleSearch()}
       />
       <IconButton type="button" onClick={clearSearch}>
-        <CloseIcon />
+        {searchValue && <CloseIcon />}
       </IconButton>
-      <IconButton type="button" onClick={handleSearch}>
-        <ArrowForwardIcon />
+      <IconButton type="button" onClick={handleSearchAction}>
+        <SearchIcon />
       </IconButton>
     </Paper>
   );

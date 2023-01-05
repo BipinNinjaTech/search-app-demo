@@ -1,6 +1,12 @@
 .search{
     width: fit-content;
+    box-shadow: none !important;
+    border: 3px solid #eaeef2;
+    border-radius: 5px;
     &__icon{
         pointer-events: none;
+    }
+    &__inputBox{
+        margin-left: 10px;
     }
 }
