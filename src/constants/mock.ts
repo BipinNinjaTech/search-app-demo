@@ -208,3 +208,108 @@ export const data = [
     ]
   }
 ]
+
+
+function createData(
+  caseNumber: string,
+  caseType: string,
+  subject: string,
+  createdBy: Date,
+  lastActvity: Date
+) {
+  return { caseNumber, caseType, subject, createdBy, lastActvity };
+}
+
+export const rows = [
+  createData(
+    "00875868",
+    "New",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875867",
+    "Closed",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875866",
+    "Open",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875865",
+    "New",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875864",
+    "Closed",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875863",
+    "New",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875862",
+    "Closed",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875861",
+    "Open",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875860",
+    "New",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875832",
+    "Open",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875841",
+    "Open",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875840",
+    "New",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+  createData(
+    "00875842",
+    "Open",
+    "Testing Access Needed",
+    new Date(),
+    new Date()
+  ),
+];

@@ -16,7 +16,6 @@ interface IProps {
 export default function Header(props: IProps) {
   const [currentPage, setCurrentPage] = useState("home");
   const { searchValue, onChangeSearchText, handleSearchResult } = props;
-  console.log("currentPage", currentPage);
   return (
     <Box className="header">
       <AppBar position="static" className="app-bar">
@@ -39,6 +38,13 @@ export default function Header(props: IProps) {
               onClick={() => setCurrentPage("search")}
             >
               Search
+            </Link>
+            <Link
+              to="/table"
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+              onClick={() => setCurrentPage("table")}
+            >
+              Table
             </Link>
           </Typography>
 
